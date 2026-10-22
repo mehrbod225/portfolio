@@ -34,8 +34,7 @@ def home():
                 st.header(row["first name"] + " " + row["last name"])
                 st.write(row["role"])
 
-                image_path = BASE_DIR / "images2" / row["image"]
-
+                image_path = BASE_DIR.parent / "images2" / row["image"]
                 if image_path.exists():
                     st.image(str(image_path), width=200)
                 else:
