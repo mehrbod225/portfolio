@@ -30,10 +30,12 @@ def home():
             for _, row in df[start:start + 4].iterrows():
                 st.header(row["first name"] + " " + row["last name"])
                 st.write(row["role"])
-                st.image(
-                    str(BASE_DIR / "images2" / row["image"]),
-                    width=200
-                )
+                image_path = BASE_DIR / "images2" / row["image"]
+
+if image_path.exists():
+    st.image(str(image_path), width=200)
+else:
+    st.warning(f"Image not found: {image_path}")
 
 def contact():
     runpy.run_path(str(BASE_DIR / "pages" / "1_Contact_Us.py"))
