@@ -45,8 +45,7 @@ with col2:
     for index, row in df[8:].iterrows():
 
         st.header(row["first name"] + " " + row["last name"])
-st.write("TEST - Portfolio page is running")
         st.write(row["role"])
 
         st.image("images2/" + row["image"], width=200)
-
+st.write("TEST - Portfolio page is running")
