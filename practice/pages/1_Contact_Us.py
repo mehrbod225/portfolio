@@ -10,7 +10,7 @@ from send_email import send_email
 st.header("Contact Us")
 
 with st.form(key="email_form"):
-    df = pandas.read_csv(BASE_DIR / "practice" / "topics.csv")
+    df = pandas.read_csv(BASE_DIR / "topics.csv")
 
     user_email = st.text_input("Your email address")
     topic_email = st.selectbox("Topic", df["topic"].tolist())
